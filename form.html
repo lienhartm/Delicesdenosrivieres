@@ -1,89 +1,134 @@
 <!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-<style>
-* {
-  box-sizing: border-box;
-}
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de devis - Délices de nos Rivières</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  background-color: #f1f1f1;
-}
+    body {
+      background-color: #f1f1f1;
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
 
-#regForm {
-  background-color: #ffffff;
-  margin: 100px auto;
-  font-family: Raleway;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
-}
+    #regForm {
+      background-color: #ffffff;
+      margin: 50px auto;
+      padding: 40px;
+      width: 70%;
+      max-width: 700px;
+      min-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-h1 {
-  text-align: center;  
-}
+    h1 {
+      text-align: center;
+      color: #1b4965;
+    }
 
-input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-}
+    h3 {
+      color: #1b4965;
+      border-bottom: 2px solid #f1f1f1;
+      padding-bottom: 8px;
+    }
 
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
+    input, select, textarea {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      font-family: 'Raleway', sans-serif;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+    }
 
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
+    /* Cases à cocher en taille normale */
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+      transform: scale(1.1);
+    }
 
-button {
-  background-color: #04AA6D;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 17px;
-  font-family: Raleway;
-  cursor: pointer;
-}
+    /* Marquage des champs invalides */
+    input.invalid, select.invalid {
+      background-color: #ffdddd;
+      border-color: #e63946;
+    }
 
-button:hover {
-  opacity: 0.8;
-}
+    /* Masquer toutes les étapes par défaut */
+    .tab {
+      display: none;
+    }
 
-#prevBtn {
-  background-color: #bbbbbb;
-}
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+      background: #f9f9f9;
+      padding: 12px;
+      border-radius: 4px;
+    }
 
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;  
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
+    .checkbox-grid label {
+      font-weight: normal;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
 
-.step.active {
-  opacity: 1;
-}
+    button {
+      background-color: #1b4965;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-family: 'Raleway', sans-serif;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04AA6D;
-}
-</style>
+    button:hover {
+      opacity: 0.85;
+    }
+
+    #prevBtn {
+      background-color: #bbbbbb;
+      margin-right: 8px;
+    }
+
+    /* Indicateurs d'étapes (cercles) */
+    .step {
+      height: 15px;
+      width: 15px;
+      margin: 0 4px;
+      background-color: #bbbbbb;
+      border: none;
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0.5;
+    }
+
+    .step.active {
+      opacity: 1;
+      background-color: #1b4965;
+    }
+
+    .step.finish {
+      background-color: #04AA6D;
+    }
+  </style>
+</head>
 <body>
 
-<form id="regForm" action="" method="post">
+<form id="regForm" action="mail.php" method="post">
+  <h1>Demande de devis & Contact</h1>
 
   <!-- Étape 1 : Coordonnées du client -->
   <div class="tab">
@@ -99,11 +144,11 @@ button:hover {
     <p><input type="email" placeholder="Adresse e-mail..." oninput="this.className = ''" name="email" required></p>
     <p><input type="tel" placeholder="Téléphone..." oninput="this.className = ''" name="phone" required></p>
   </div>
-  
-  <!-- Étape 2 :  -->
+
+  <!-- Étape 2 : Événement, lieu et logistique -->
   <div class="tab">
-    <h3>2. Votre événement</h3>
-    <label for="event_type">Type d'événement :</label>
+    <h3>2. Votre événement & Logistique</h3>
+    <label for="event_type"><strong>Type d'événement :</strong></label>
     <p>
       <select id="event_type" name="event_type" oninput="this.className = ''">
         <option value="">-- Choisissez le type d'événement --</option>
@@ -116,7 +161,8 @@ button:hover {
         <option value="Autre">Autre événement</option>
       </select>
     </p>
-        <label for="setting_type"><strong>Configuration du lieu :</strong></label>
+
+    <label for="setting_type"><strong>Configuration du lieu :</strong></label>
     <p>
       <select id="setting_type" name="setting_type" oninput="this.className = ''">
         <option value="Intérieur">En intérieur (salle, domicile, restaurant...)</option>
@@ -126,61 +172,57 @@ button:hover {
     </p>
 
     <p><strong>Besoin en mobilier (optionnel) :</strong></p>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px;">
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="materiel[]" value="Tentes / Tonnelles" style="width: auto; margin-right: 6px;"> Tentes / Tonnelles
-      </label>
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="materiel[]" value="Tables" style="width: auto; margin-right: 6px;"> Tables
-      </label>
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="materiel[]" value="Bancs" style="width: auto; margin-right: 6px;"> Bancs
-      </label>
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="materiel[]" value="Chaises" style="width: auto; margin-right: 6px;"> Chaises
-      </label>
+    <div class="checkbox-grid">
+      <label><input type="checkbox" name="materiel[]" value="Tentes / Tonnelles"> Tentes / Tonnelles</label>
+      <label><input type="checkbox" name="materiel[]" value="Tables"> Tables</label>
+      <label><input type="checkbox" name="materiel[]" value="Bancs"> Bancs</label>
+      <label><input type="checkbox" name="materiel[]" value="Chaises"> Chaises</label>
     </div>
 
     <p><strong>Besoin en consommables de table (optionnel) :</strong></p>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px;">
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="consommables[]" value="Nappes (papier)" style="width: auto; margin-right: 6px;"> Nappes (papier)
-      </label>
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="consommables[]" value="Couverts (plastique)" style="width: auto; margin-right: 6px;"> Couverts (plastique)
-      </label>
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="consommables[]" value="Assiettes (carton)" style="width: auto; margin-right: 6px;"> Assiettes (carton)
-      </label>
-      <label style="font-weight: normal; cursor: pointer;">
-        <input type="checkbox" name="consommables[]" value="Verres (plastique)" style="width: auto; margin-right: 6px;"> Verres (plastique)
-      </label>
+    <div class="checkbox-grid">
+      <label><input type="checkbox" name="consommables[]" value="Nappes (papier)"> Nappes (papier)</label>
+      <label><input type="checkbox" name="consommables[]" value="Couverts (plastique)"> Couverts (plastique)</label>
+      <label><input type="checkbox" name="consommables[]" value="Assiettes (carton)"> Assiettes (carton)</label>
+      <label><input type="checkbox" name="consommables[]" value="Verres (plastique)"> Verres (plastique)</label>
     </div>
   </div>
 
   <!-- Étape 3 : Date et volume -->
   <div class="tab">
     <h3>3. Date & Convives</h3>
-    <label for="event_date">Date prévue de l'événement :</label>
+    <label for="event_date"><strong>Date prévue de l'événement :</strong></label>
     <p><input type="date" id="event_date" name="event_date" oninput="this.className = ''"></p>
 
-    <label for="guests">Nombre de convives adulte estimé (ou quantité souhaitée) :</label>
-    <p><input type="number" id="guests" name="guests" min="1" placeholder="Ex : 30 personnes" oninput="this.className = ''"></p>
+    <label for="guests_adults"><strong>Nombre de convives adultes estimé :</strong></label>
+    <p><input type="number" id="guests_adults" name="guests_adults" min="1" placeholder="Ex : 30 adultes" oninput="this.className = ''"></p>
 
-    <label for="guests">Nombre de convives enfant estimé (ou quantité souhaitée) :</label>
-    <p><input type="number" id="guests" name="guests" min="1" placeholder="Ex : 30 personnes" oninput="this.className = ''"></p>
-    
-    <p><input placeholder="Lieu / Commune de l'événement (ex : Guebwiller, Colmar...)" name="location" oninput="this.className = ''"></p>
+    <label for="guests_children"><strong>Nombre de convives enfants estimé :</strong></label>
+    <p><input type="number" id="guests_children" name="guests_children" min="0" value="0" placeholder="Ex : 5 enfants (0 si aucun)" oninput="this.className = ''"></p>
+
+    <label for="location"><strong>Lieu / Commune de l'événement :</strong></label>
+    <p><input id="location" placeholder="Ex : Guebwiller, Colmar, Mulhouse..." name="location" oninput="this.className = ''"></p>
   </div>
 
-  <div style="overflow:auto;">
+  <!-- Étape 4 : Envies gastronomiques et message -->
+  <div class="tab">
+    <h3>4. Vos envies & Précisions</h3>
+    <label for="message"><strong>Détails de votre demande :</strong></label>
+    <p>
+      <textarea id="message" name="message" rows="5" placeholder="Précisez les produits souhaités (sandre, brochet, perche, silure, poissons fumés, matelote...), une éventuelle animation musicale à l'accordéon, ou vos questions..."></textarea>
+    </p>
+  </div>
+
+  <!-- Boutons de navigation -->
+  <div style="overflow:auto; margin-top: 25px;">
     <div style="float:right;">
-      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Précédent</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Suivant</button>
     </div>
   </div>
-  <!-- Circles which indicates the steps of the form: -->
-  <div style="text-align:center;margin-top:40px;">
+
+  <!-- 4 cercles correspondant aux 4 étapes -->
+  <div style="text-align:center; margin-top:35px;">
     <span class="step"></span>
     <span class="step"></span>
     <span class="step"></span>
@@ -189,79 +231,77 @@ button:hover {
 </form>
 
 <script>
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+var currentTab = 0; // Étape initiale (0)
+showTab(currentTab); // Afficher la première étape
 
 function showTab(n) {
-  // This function will display the specified tab of the form...
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
+
+  // Gestion de l'affichage du bouton Précédent
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
+
+  // Changement du texte du bouton Suivant à la dernière étape
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "Envoyer la demande";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Suivant";
   }
-  //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
+
+  fixStepIndicator(n);
 }
 
 function nextPrev(n) {
-  // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
+  // Bloquer le passage à l'étape suivante si un champ obligatoire est vide
   if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
+
+  // Masquer l'étape actuelle
   x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form...
+
+  // Si on atteint la fin du formulaire, soumettre
   if (currentTab >= x.length) {
-    // ... the form gets submitted:
     document.getElementById("regForm").submit();
     return false;
   }
-  // Otherwise, display the correct tab:
+
   showTab(currentTab);
 }
 
 function validateForm() {
-  // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current tab:
+  y = x[currentTab].querySelectorAll("input, select");
+
   for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
+    // On ignore les cases à cocher (optionnelles) et le nombre d'enfants (peut être 0)
+    if (y[i].type === "checkbox" || y[i].name === "guests_children") {
+      continue;
+    }
+    if (y[i].value.trim() == "") {
       y[i].className += " invalid";
-      // and set the current valid status to false
       valid = false;
     }
   }
-  // If the valid status is true, mark the step as finished and valid:
+
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
-  return valid; // return the valid status
+  return valid;
 }
 
 function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
   var i, x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
-  //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
 </script>
 
 </body>
-</html>
