@@ -1,3 +1,5 @@
+###### IA infos
+
 Vous pouvez consulter les données fluviales du Rhin (hauteurs d'eau, débits, navigation et qualité de l'eau) sur plusieurs portails officiels et gratuits selon la zone géographique et le type de mesure recherché.
 
 1. Temps réel : niveaux d'eau, débits et crues
