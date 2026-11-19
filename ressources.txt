@@ -1,0 +1,56 @@
+Vous pouvez consulter les données fluviales du Rhin (hauteurs d'eau, débits, navigation et qualité de l'eau) sur plusieurs portails officiels et gratuits selon la zone géographique et le type de mesure recherché.
+
+1. Temps réel : niveaux d'eau, débits et crues
+
+• En France et frontière franco-allemande : Le service Vigicrues (Territoire Rhin-Sarre) publie en direct les hauteurs d'eau et débits des stations frontalières comme Bâle Rheinhalle ou Lauterbourg.
+• Côté allemand (navigation et échelles) : La plateforme fédérale PEGELONLINE (WSV) centralise les cotes d'eau actualisées en continu et les prévisions de navigation pour toutes les stations du Rhin allemand (Breisach, Maxau, Mannheim, Kaub, Cologne).
+• Côté suisse (amont de Bâle) : L'Office fédéral de l'environnement met à disposition les relevés de débit, température et niveau sur Hydrodaten (station Bâle - Rheinhalle).
+• Vue globale sur tout le fleuve : L'agrégateur RiverApp (Rhin) regroupe sur une même carte les mesures en direct de 59 stations de la Suisse jusqu'aux Pays-Bas.
+
+2. Navigation fluviale et batellerie
+
+• Trafic, écluses et incidents : Le portail européen EuRIS (via VNF) fournit 24h/24 les avis à la batellerie, temps d'attente aux écluses et conditions de navigation sur le corridor rhénan.
+• Tirant d'eau et repères de navigation : Le site spécialisé Pegeltiefgang affiche les niveaux critiques d'étiage (GlW) et les tirants d'eau maximaux autorisés pour le transport fluvial.
+
+3. Archives historiques, qualité de l'eau et APIs (Open Data)
+
+• Séries historiques et statistiques : L'Hydroportail Eaufrance permet de télécharger les historiques de débits journaliers et les fiches de synthèse sur plusieurs décennies (ex. station de Breisach).
+• Qualité physico-chimique et environnement : Le SIERM (Agence de l'eau Rhin-Meuse) donne accès aux données environnementales du bassin, tandis que l'APRONA (suivi du Rhin en direct) publie les paramètres continus (pH, température, nitrates) relevés à Huningue.
+• Accès développeurs (JSON / REST) : L'API publique française Hub'Eau (Hydrométrie) et l'API REST ouverte de PEGELONLINE permettent d'interroger directement les mesures du Rhin en JSON pour vos applications.
+
+---
+
+L'entreprise à laquelle vous faites référence s'appelle en réalité Les Délices de nos Rivières (basée à Balgau, dans le Haut-Rhin), fondée par Adrien Vonarb et reprise par Jérémy Fuchs (https://www.google.com/search?kgmid=%2Fg%2F11tmgq3ckl&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+j%C3%A9r%C3%A9my+fuchs), l'un des tout derniers pêcheurs professionnels du Rhin. [1] (https://foodandgood.fr/delices-de-nos-rivieres/), [2] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/), [3] (https://www.francetvpro.fr/contenu-de-presse/50488612)
+Son concept consiste à valoriser l'intégralité de sa pêche sauvage (y compris les espèces dites « blanches » ou moins connues du grand public) en les préparant dans son propre atelier de transformation. [1] (https://www.facebook.com/TF1Info/videos/a-la-rencontre-de-j%C3%A9r%C3%A9my-fuchs-le-dernier-p%C3%AAcheur-professionnel-%C3%A0-exercer-sur-le/1186849638510958/), [2] (https://foodandgood.fr/delices-de-nos-rivieres/)
+
+Les poissons pêchés dans le Rhin et le Grand Canal d'Alsace
+
+Jérémy Fuchs pêche au filet à grandes mailles (secteurs de Kembs, Fessenheim, Balgau) et remonte une grande variété d'espèces sauvages d'eau douce : [1] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/), [2] (https://foodandgood.fr/delices-de-nos-rivieres/)
+• Poissons carnassiers et nobles : Sandre (https://www.google.com/search?kgmid=%2Fm%2F04h824&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+sandre), brochet (https://www.google.com/search?kgmid=%2Fm%2F0cz_55&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+brochet), perche (https://www.google.com/search?kgmid=%2Fg%2F120scwvq&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+perche), silure (https://www.google.com/search?kgmid=%2Fm%2F0b4hsp&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+silure) et anguille (https://www.google.com/search?kgmid=%2Fm%2F01j2nz&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+anguille).
+• Poissons blancs et cyprinidés : Carpe (https://www.google.com/search?kgmid=%2Fm%2F0gjrl&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+carpe), brème (https://www.google.com/search?kgmid=%2Fm%2F02vtg5m&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+br%C3%A8me), barbeau (https://www.google.com/search?kgmid=%2Fm%2F0f43yj&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+barbeau), aspe du Danube et chevesne.
+• Crustacés : Écrevisses (https://www.google.com/search?kgmid=%2Fm%2F0by1g&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+%C3%A9crevisses). [1] (https://www.francetvpro.fr/contenu-de-presse/50488612), [2] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/), [3] (https://www.facebook.com/TF1Info/videos/a-la-rencontre-de-j%C3%A9r%C3%A9my-fuchs-le-dernier-p%C3%AAcheur-professionnel-%C3%A0-exercer-sur-le/1186849638510958/)
+(Une petite partie des prises brutes est vendue directement aux restaurateurs locaux, dont des tables étoilées, tandis que l'essentiel est transformé sur place.) [1] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/)
+
+Les produits transformés (gamme traiteur)
+
+Pour éviter le gaspillage et permettre aux consommateurs de déguster facilement des poissons parfois riches en arêtes (comme la brème ou le barbeau (https://www.google.com/search?kgmid=%2Fm%2F0f43yj&q=Les+d%C3%A9lices+du+rhin+un+p%C3%AAcheur+%2F+traiteur+d%27alsace%2C+mais+peut+tu+me+dire+se+qu%27il+sert+en+poisson+et+en+produit+transorm%C3%A9+%3F+barbeau)), environ 85 % de la pêche est transformée artisanalement sans additifs ni conservateurs : [1] (https://foodandgood.fr/delices-de-nos-rivieres/), [2] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/), [3] (https://www.facebook.com/TF1Info/videos/a-la-rencontre-de-j%C3%A9r%C3%A9my-fuchs-le-dernier-p%C3%AAcheur-professionnel-%C3%A0-exercer-sur-le/1186849638510958/)
+• Spécialités feuilletées et salées : Quiches aux poissons du Rhin, tourtes et friands.
+• Tartinables et conserverie fraîche : Rillettes fraîches de poisson et terrines. [1] (https://foodandgood.fr/delices-de-nos-rivieres/), [2] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/)
+Souhaitez-vous savoir dans quels points de vente (magasins de producteurs ou supermarchés locaux) vous pouvez acheter ces produits en Alsace, ou préférez-vous leurs coordonnées à Balgau ?
+
+---
+
+Je ne peux pas accéder directement au contenu de http://delicesdenosrivieres.com/, car cette URL n'est pas indexée ou accessible actuellement. D'après les résultats de recherche web disponibles sur l'entreprise Les Délices de nos Rivières, voici ce que l'on sait de son activité et de sa présence en ligne.
+
+Statut du site web
+
+• Adresse non référencée : Le domaine delicesdenosrivieres.com n'apparaît pas dans les index de recherche actuels, ce qui indique généralement que le site est hors ligne, en maintenance ou que le nom de domaine a expiré.
+• Présence sur des annuaires régionaux : L'entreprise est référencée sur des plateformes locales comme Food and Good et a fait l'objet d'articles dans la presse régionale, notamment sur le blog Carola et les DNA. [1] (https://foodandgood.fr/delices-de-nos-rivieres/), [2] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/), [3] (https://www.dna.fr/economie/2021/05/27/a-balgau-les-delices-de-nos-rivieres-retrouve-ses-clients)
+
+Informations connues sur l'entreprise
+
+• Localisation : L'atelier et le siège sont situés Rue de la Mittelhardt à Balgau (Haut-Rhin). [1] (https://foodandgood.fr/delices-de-nos-rivieres/)
+• Activité : Reprise le 1er janvier 2020 par Jérémy Fuchs à la suite d'Adrien Vonarb, l'entreprise pratique la pêche professionnelle au filet à grandes mailles sur le Rhin et le Grand Canal d'Alsace (secteurs de Kembs et Fessenheim). [1] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/), [2] (https://foodandgood.fr/delices-de-nos-rivieres/)
+• Distribution : Environ 85 % des prises sont transformées dans l'atelier de Balgau (quiches, tourtes, terrines, rillettes fraîches, friands) pour être vendues en supermarchés locaux, tandis que le reste des poissons frais est livré à des restaurants de la région. [1] (https://foodandgood.fr/delices-de-nos-rivieres/), [2] (https://www.carola.fr/blog/dernier-pecheur-rhin-00525/)
+Si vous avez besoin des coordonnées téléphoniques ou de l'adresse exacte de l'atelier à Balgau pour les contacter directement, souhaitez-vous que je les recherche pour vous ?
+
