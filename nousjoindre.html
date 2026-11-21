@@ -8,8 +8,14 @@
 
 		<link rel="stylesheet" href="style.css">
     <script>
+		
       async function init() {
-        await customElements.whenDefined('gmp-map');
+
+		  await Promise.all([
+    customElements.whenDefined('gmp-map'),
+    customElements.whenDefined('gmp-advanced-marker'),
+    customElements.whenDefined('gmpx-place-picker')
+]);
 
         const map = document.querySelector('gmp-map');
         const marker = document.querySelector('gmp-advanced-marker');
@@ -106,6 +112,11 @@
 		  .place-picker-container {
 	        padding: 20px;
 	      }
+			gmp-map {
+    display: block;
+    width: 100%;
+    height: 450px;
+}
 		</style>
 	</head>
 
@@ -144,26 +155,29 @@
 
           </div>
 
-          <iframe
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA2hpqN39nm0mmOxZVO4lNbQpj8-l6X2Bo&q=47.9271614,7.537052"
-              width="100%"
-              height="450"
-              style="border:0;"
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
--->
-		      <gmpx-api-loader key="AIzaSyA2hpqN39nm0mmOxZVO4lNbQpj8-l6X2Bo" solution-channel="GMP_GE_mapsandplacesautocomplete_v2">
-    </gmpx-api-loader>
-    <gmp-map center="40.749933,-73.98633" zoom="13" map-id="DEMO_MAP_ID">
-      <div slot="control-block-start-inline-start" class="place-picker-container">
-        <gmpx-place-picker placeholder="Enter an address"></gmpx-place-picker>
-      </div>
-      <gmp-advanced-marker></gmp-advanced-marker>
-    </gmp-map>
+<!-- Chargement de la bibliothèque Google -->
+<script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js">
+</script>
 
-		  
+<!-- Chargement de l'API Google Maps -->
+<gmpx-api-loader
+    key="AIzaSyA2hpqN39nm0mmOxZVO4lNbQpj8-l6X2Bo">
+</gmpx-api-loader>
+
+<!-- Carte Google Maps -->
+<gmp-map
+    center="47.9271614,7.537052"
+    zoom="16"
+    map-id="DEMO_MAP_ID">
+
+    <gmp-advanced-marker
+        position="47.9271614,7.537052"
+        title="Délices de nos rivières">
+    </gmp-advanced-marker>
+
+</gmp-map>
       </section>
 		      
 		<footer class="center">
