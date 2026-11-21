@@ -65,5 +65,5 @@ Si vous souhaitez cloner ce projet pour le modifier ou le tester localement :
 ---
 
 <div align="center">
-  <sub>*© 1988 - 2026 Délices de nos Rivières. Tous droits réservés.* - © 2026–2027 — Michael Lienhart | <a href="https://lienhartm.github.io/lm/">WebSite LM</a></sub>
+  <sub>© 2026–2027 — Michael Lienhart | <a href="https://lienhartm.github.io/lm/">WebSite LM</a></sub>
 </div>
