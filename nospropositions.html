@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Délices de nos rivières</title>
+<!--
 		<link rel="stylesheet" href="style.css">
+-->
 		<style>
 			body {
 				text-align: center;
@@ -30,30 +32,39 @@
 				font-weight: bold;
 				color: white;
 			}
-			section	{
-				display: inline-flex;
-				flex-direction: column;
-				width: auto;
-				height: auto;
-				padding: 50px 0 50px 0;
-				margin:20px;
-			}
-			h2 {
-				width: 400px;
-				margin: 20px auto 20px auto;
-				text-align: center;
-				border-bottom: 2px solid #146E1E;
-				color: #141E6E;
-				margin-bottom: 50px;
-			}
-			p, p>a {
-				color: #141E6E;
+			p {
+				padding-top: 50px;
 				font-weight: bold;
-				margin: 0px;
+				color: #141E6E;
 			}
-			hr {
-				border: 1px solid green;
+			a.soumission {
+				position: relative;
+				padding: 15px;
+				border-radius: 10px;
+				background-color: orange;
+				color: white;
+				top: 100px;
+			}
+			figure {
+				border: 2px solid #146E1E;
+				border-radius: 15px;
+			}
+			img.article {
+				border-radius: 15px;
+			}
+			figcaption {
+				background-color: #146E1E;
+				padding: 10px 0 10px 0;
+				border-radius: 0 0 15px 15px;
+			}
+			.proposition {
+				display: flex;
+				justify-content: center;
+				margin-top: 200px;
+			}
+			.article {
 				width: 200px;
+				margin: 0 auto 0 auto;
 			}
 			footer {
 				background-color: rgba(20,30,110,0.5);
@@ -78,24 +89,35 @@
 			<a href="nousjoindre.html">NOUS JOINDRE</a>
 		</nav>
 		<section>
-			<h2>Nos propositions</h2>
-			<p>Jérémy Fuchs est le dernier pêcheur professionnel d'Alsace à tendre ses filets sur le Rhin, sur plus de 70 kilomètres de berges. Il fournit les plus grands restaurants de la région : l'Auberge de l'Ill à Illhaeusern, ou encore le Cerf à Marlenheim.</p>
-			<br>
-			<p>L'autre partie de sa pêche est transformée en produits (tourtes, quiches, quenelles, terrines...) en vente dans des magasins de la proche région et aux particuliers sur commande.</p>
-			<br>
-			<p>Sa méthode de pêche, à l'ancienne, respecte le milieu dans lequel évolue le poisson. Il connaît par coeur le Rhin et son histoire.</p>
-			<br>
-			<br>
-			<hr>
-			<br>
-			<p>Pour les commandes : 06 . 87 . 85 . 73 . 47 ou par internet : <a href="mailto:fuchsjeremy@hotmail.com">fuchsjeremy@hotmail.com</a> - A retirer au 1a, rue de la Mittelhardt à Balgau.</p>
-			<br>
-			<hr>
-			<p># Propositions suivant disponibilité de la pêche #</p>
-			<p># Enregistrement des commandes #</p>
-			<p># Newsletter de satisfaction #</p>
-			<p># Helpdesk online #</p>
-		</section>		
+			<p>Délices de nos rivières collecte et transforme maintenant depuis 1988 le poisson sauvage pêché sur le grand canal d'Alsace et le Rhin.</p>
+			<a class="soumission" href="form.html">Par ici ! </a>
+			<div class="proposition">
+				<a href="nospropositions.html">
+					<figure class="article">
+						<img class="article" src="media/l0g0.png">
+						<figcaption class="article">L'étal du Pêcheur</figcaption>
+					</figure>
+				</a>
+				<a href="nospropositions.html">
+					<figure class="article">
+						<img class="article" src="media/l0g0.png">
+						<figcaption class="article">Le traiteur</figcaption>
+					</figure>
+				</a>
+				<a href="nospropositions.html">
+					<figure class="article">
+						<img class="article" src="media/l0g0.png">
+						<figcaption class="article">Dégustation</figcaption>
+					</figure>
+				</a>
+				<a href="nospropositions.html">
+					<figure class="article">
+						<img class="article" src="media/l0g0.png">
+						<figcaption class="article">...</figcaption>
+					</figure>
+				</a>
+			</div>
+		</section>
 		<footer class="center">
 		  <h6>© 2026–2027 — Michael Lienhart | <a href="https://lienhartm.github.io/lm/">WebSite LM</a></h6>
 		</footer>
