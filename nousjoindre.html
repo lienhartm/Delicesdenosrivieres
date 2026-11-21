@@ -1,122 +1,90 @@
 <!doctype html>
-
 <html>
 	<head>
 		<meta charset="utf-8">
-
 		<title>Délices de nos rivières</title>
-
 		<link rel="stylesheet" href="style.css">
-    <script>
-		async function init() {
-		
-		    // Attendre le chargement des composants Google Maps
-		    await Promise.all([
-		        customElements.whenDefined('gmp-map'),
-		        customElements.whenDefined('gmp-advanced-marker'),
-		        customElements.whenDefined('gmpx-place-picker')
-		    ]);
-		
-		    // Récupération des composants HTML
-		    const map = document.querySelector('gmp-map');
-		    const marker = document.querySelector('gmp-advanced-marker');
-		    const placePicker = document.querySelector('gmpx-place-picker');
-		
-		    // Création de la fenêtre d'information
-		    const infowindow = new google.maps.InfoWindow();
-		
-		    // Configuration de la carte
-		    map.innerMap.setOptions({
-		        mapTypeControl: false
-		    });
-		
-		    // Position initiale : Rue Mittelhardt, Balgau
-		    const positionInitiale = {
-		        lat: 47.927672,
-		        lng: 7.536155
-		    };
-		
-		    map.center = positionInitiale;
-		    map.zoom = 16;
-		
-		    marker.position = positionInitiale;
-		    marker.title = "Délices de nos rivières";
-		
-		    // Recherche d'une adresse
-		    placePicker.addEventListener('gmpx-placechange', () => {
-		
-		        const place = placePicker.value;
-		
-		        if (!place.location) {
-		
-		            window.alert(
-		                "Aucune information disponible pour : " + place.name
-		            );
-		
-		            infowindow.close();
-		            marker.position = null;
-		
-		            return;
-		        }
-		
-		        // Déplacement de la carte
-		        if (place.viewport) {
-		
-		            map.innerMap.fitBounds(place.viewport);
-		
-		        } else {
-		
-		            map.center = place.location;
-		            map.zoom = 16;
-		
-		        }
-		
-		        // Déplacement du marqueur
-		        marker.position = place.location;
-		
-		        // Informations du lieu
-		        infowindow.setContent(`
-		            <strong>${place.displayName}</strong><br>
-		            <span>${place.formattedAddress}</span>
-		        `);
-		
-		        // Affichage de la fenêtre
-		        infowindow.open(map.innerMap, marker);
-		
-		    });
-		
-		}
-		
-		// Initialisation
-		document.addEventListener('DOMContentLoaded', init);
-
-	</script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js">
-    </script>
-
+	    <script>
+			async function init() {
+			    // Attendre le chargement des composants Google Maps
+			    await Promise.all([
+			        customElements.whenDefined('gmp-map'),
+			        customElements.whenDefined('gmp-advanced-marker'),
+			        customElements.whenDefined('gmpx-place-picker')
+			    ]);		
+			    // Récupération des composants HTML
+			    const map = document.querySelector('gmp-map');
+			    const marker = document.querySelector('gmp-advanced-marker');
+			    const placePicker = document.querySelector('gmpx-place-picker');
+			    // Création de la fenêtre d'information
+			    const infowindow = new google.maps.InfoWindow();
+			    // Configuration de la carte
+			    map.innerMap.setOptions({
+			        mapTypeControl: false
+			    });
+			    // Position initiale : Rue Mittelhardt, Balgau
+			    const positionInitiale = {
+			        lat: 47.927672,
+			        lng: 7.536155
+			    };
+			    map.center = positionInitiale;
+			    map.zoom = 16;
+			    marker.position = positionInitiale;
+			    marker.title = "Délices de nos rivières";
+			    // Recherche d'une adresse
+			    placePicker.addEventListener('gmpx-placechange', () => {
+			        const place = placePicker.value;
+			        if (!place.location) {
+			            window.alert(
+			                "Aucune information disponible pour : " + place.name
+			            );
+			            infowindow.close();
+			            marker.position = null;
+			            return;
+			        }
+			        // Déplacement de la carte
+			        if (place.viewport) {
+			            map.innerMap.fitBounds(place.viewport);
+			        } else {
+			            map.center = place.location;
+			            map.zoom = 16;
+			        }
+			        // Déplacement du marqueur
+			        marker.position = place.location;
+			        // Informations du lieu
+			        infowindow.setContent(`
+			            <strong>${place.displayName}</strong><br>
+			            <span>${place.formattedAddress}</span>
+			        `);
+			        // Affichage de la fenêtre
+			        infowindow.open(map.innerMap, marker);
+			    });
+			}
+			// Initialisation
+			document.addEventListener('DOMContentLoaded', init);
+		</script>
+	    <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js"></script>
 		<style>
-			body	{
+			body {
 				text-align: center;
 			}
-			h1	{
+			h1 {
 				color: #141E6E;
 				font-size: 60px;
 				border-bottom: 2px solid #141E6E;
 			}
-			
-			h1:before	{
+			h1:before {
 				content: url("media/l0g0-1.png");
 				position: relative;
 				right: 25px;
 				top: 25px;
 				border-bottom: 2px solid #141E6E;
 			}
-			
 			nav	{
 				background-color: #141E6E;
 				padding: 20px;
 			}
-			a	{
+			a {
 				margin: 0 100px 0 100px;
 				text-decoration: none;
 				font-weight: bold;
@@ -130,7 +98,7 @@
 				padding: 20px 0 20px 0;
 				margin:20px;
 			}
-			h2	{
+			h2 {
 				width: 500px;
 				margin: 20px auto 20px auto;
 				text-align: center;
@@ -138,8 +106,7 @@
 				color: #141E6E;
 				margin-bottom: 50px;
 			}
-			
-			footer	{
+			footer {
 				background-color: rgba(20,30,110,0.5);
 				margin-top: 100px;
 				padding: 50px;
@@ -193,50 +160,37 @@
 			h6 > a {
 				margin: 0px;
 			}
-						
 			@media screen and (max-width: 768px) {
-			
-			    .tables {
-			        flex-direction: column;
-			        align-items: center;
-			    }
-			
-			    .address {
-			        width: 100%;
-			        max-width: 400px;
-			        flex-basis: auto;
-			    }
-			
-			    .carte {
-			        width: 100%;
-			    }
-			
-			    h2 {
-			        width: 100%;
-			    }
-			
+				.tables {
+					flex-direction: column;
+					align-items: center;
+				}
+				.address {
+					width: 100%;
+					max-width: 400px;
+					flex-basis: auto;
+				}
+				.carte {
+					width: 100%;
+				}
+				h2 {
+					width: 100%;
+				}
 			}
-		  
 		</style>
 	</head>
-
 	<body>
-
 		<header>
 			<h1>Délices de nos rivières</h1>
 		</header>
-
 		<nav>
 			<a href="index.html">NOS PROPOSITIONS</a>
 			<a href="apropos.html" target="_blanck">A PROPOS</a>
 			<a href="nostables.html">NOS TABLES</a>
 			<a href="nousjoindre.html">NOUS JOINDRE</a>
 		</nav>
-
 		<section class="localisation">
-			
 			<h2>Où nous trouver ?</h2>
-			
 			<div class="tables">
 				<div class="address">
 					<div class="stitre">
