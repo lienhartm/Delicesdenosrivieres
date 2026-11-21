@@ -212,6 +212,30 @@
     }
 
 }
+
+.etiquette-carte {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    min-width: 190px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.etiquette-carte strong {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.etiquette-carte span {
+    display: block;
+    color: #666;
+    font-size: 12px;
+}
 		  
 		</style>
 	</head>
@@ -282,11 +306,13 @@
      class="place-picker-container">
 
 </div>
-			    
-			            <gmp-advanced-marker
-			                position="47.9271614,7.537052"
-			                title="Délices de nos rivières">
-			            </gmp-advanced-marker>
+									    
+						<gmp-advanced-marker position="47.9271614,7.537052">
+						  <div class="etiquette-carte">
+						    <strong>Délices de nos rivières</strong>
+						    <span>Adresse complète de l'établissement</span>
+						  </div>
+						</gmp-advanced-marker>
 					    
 			        </gmp-map>
 				    </div>			
