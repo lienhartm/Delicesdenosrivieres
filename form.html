@@ -1,314 +1,271 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demande de devis - Délices de nos Rivières</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #f1f1f1;
-      font-family: 'Raleway', sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-
-    #regForm {
-      background-color: #ffffff;
-      margin: 50px auto;
-      padding: 40px;
-      width: 70%;
-      max-width: 700px;
-      min-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      text-align: center;
-      color: #1b4965;
-    }
-
-    h3 {
-      color: #1b4965;
-      border-bottom: 2px solid #f1f1f1;
-      padding-bottom: 8px;
-    }
-
-    input, select, textarea {
-      padding: 10px;
-      width: 100%;
-      font-size: 16px;
-      font-family: 'Raleway', sans-serif;
-      border: 1px solid #aaaaaa;
-      border-radius: 4px;
-    }
-
-    /* Cases à cocher en taille normale */
-    input[type="checkbox"] {
-      width: auto;
-      margin-right: 8px;
-      transform: scale(1.1);
-    }
-
-    /* Marquage des champs invalides */
-    input.invalid, select.invalid {
-      background-color: #ffdddd;
-      border-color: #e63946;
-    }
-
-    /* Masquer toutes les étapes par défaut */
-    .tab {
-      display: none;
-    }
-
-    .checkbox-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 18px;
-      background: #f9f9f9;
-      padding: 12px;
-      border-radius: 4px;
-    }
-
-    .checkbox-grid label {
-      font-weight: normal;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-
-    button {
-      background-color: #1b4965;
-      color: #ffffff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-family: 'Raleway', sans-serif;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.85;
-    }
-
-    #prevBtn {
-      background-color: #bbbbbb;
-      margin-right: 8px;
-    }
-
-    /* Indicateurs d'étapes (cercles) */
-    .step {
-      height: 15px;
-      width: 15px;
-      margin: 0 4px;
-      background-color: #bbbbbb;
-      border: none;
-      border-radius: 50%;
-      display: inline-block;
-      opacity: 0.5;
-    }
-
-    .step.active {
-      opacity: 1;
-      background-color: #1b4965;
-    }
-
-    .step.finish {
-      background-color: #04AA6D;
-    }
-    h6 > a {
-      margin: 0px;
-    }
-  </style>
-</head>
-<body>
-
-<form id="regForm" action="mail.php" method="post">
-  <h1>Demande de devis & Contact</h1>
-
-  <!-- Étape 1 : Coordonnées du client -->
-  <div class="tab">
-    <h3>1. Vos coordonnées</h3>
-    <p>
-      <select name="client_type" oninput="this.className = ''">
-        <option value="Particulier">Vous êtes : Un Particulier</option>
-        <option value="Professionnel">Vous êtes : Un Professionnel (Restaurateur, Comité, Entreprise)</option>
-      </select>
-    </p>
-    <p><input placeholder="Prénom..." oninput="this.className = ''" name="fname" required></p>
-    <p><input placeholder="Nom (ou Nom de l'établissement)..." oninput="this.className = ''" name="lname" required></p>
-    <p><input type="email" placeholder="Adresse e-mail..." oninput="this.className = ''" name="email" required></p>
-    <p><input type="tel" placeholder="Téléphone..." oninput="this.className = ''" name="phone" required></p>
-  </div>
-
-  <!-- Étape 2 : Événement, lieu et logistique -->
-  <div class="tab">
-    <h3>2. Votre événement & Logistique</h3>
-    <label for="event_type"><strong>Type d'événement :</strong></label>
-    <p>
-      <select id="event_type" name="event_type" oninput="this.className = ''">
-        <option value="">-- Choisissez le type d'événement --</option>
-        <option value="Commande ordinaire / Repas de famille">Commande ordinaire / Repas de famille</option>
-        <option value="Mariage">Mariage</option>
-        <option value="Anniversaire / Baptême / Communion">Anniversaire / Baptême / Communion</option>
-        <option value="Fête de village / Repas associatif">Fête de village / Repas associatif</option>
-        <option value="Événement d'entreprise / Séminaire">Événement d'entreprise / Séminaire</option>
-        <option value="Approvisionnement Restaurant / Épicerie">Approvisionnement Restaurant / Épicerie fine</option>
-        <option value="Autre">Autre événement</option>
-      </select>
-    </p>
-
-    <label for="setting_type"><strong>Configuration du lieu :</strong></label>
-    <p>
-      <select id="setting_type" name="setting_type" oninput="this.className = ''">
-        <option value="Intérieur">En intérieur (salle, domicile, restaurant...)</option>
-        <option value="Extérieur">En extérieur (jardin, plein air, chapiteau...)</option>
-        <option value="Intérieur et Extérieur">Mixte (Intérieur et Extérieur)</option>
-      </select>
-    </p>
-
-    <p><strong>Besoin en mobilier (optionnel) :</strong></p>
-    <div class="checkbox-grid">
-      <label><input type="checkbox" name="materiel[]" value="Tentes / Tonnelles"> Tentes / Tonnelles</label>
-      <label><input type="checkbox" name="materiel[]" value="Tables"> Tables</label>
-      <label><input type="checkbox" name="materiel[]" value="Bancs"> Bancs</label>
-      <label><input type="checkbox" name="materiel[]" value="Chaises"> Chaises</label>
-    </div>
-
-    <p><strong>Besoin en consommables de table (optionnel) :</strong></p>
-    <div class="checkbox-grid">
-      <label><input type="checkbox" name="consommables[]" value="Nappes (papier)"> Nappes (papier)</label>
-      <label><input type="checkbox" name="consommables[]" value="Couverts (plastique)"> Couverts (plastique)</label>
-      <label><input type="checkbox" name="consommables[]" value="Assiettes (carton)"> Assiettes (carton)</label>
-      <label><input type="checkbox" name="consommables[]" value="Verres (plastique)"> Verres (plastique)</label>
-    </div>
-  </div>
-
-  <!-- Étape 3 : Date et volume -->
-  <div class="tab">
-    <h3>3. Date & Convives</h3>
-    <label for="event_date"><strong>Date prévue de l'événement :</strong></label>
-    <p><input type="date" id="event_date" name="event_date" oninput="this.className = ''"></p>
-
-    <label for="guests_adults"><strong>Nombre de convives adultes estimé :</strong></label>
-    <p><input type="number" id="guests_adults" name="guests_adults" min="1" placeholder="Ex : 30 adultes" oninput="this.className = ''"></p>
-
-    <label for="guests_children"><strong>Nombre de convives enfants estimé :</strong></label>
-    <p><input type="number" id="guests_children" name="guests_children" min="0" value="0" placeholder="Ex : 5 enfants (0 si aucun)" oninput="this.className = ''"></p>
-
-    <label for="location"><strong>Lieu / Commune de l'événement :</strong></label>
-    <p><input id="location" placeholder="Ex : Guebwiller, Colmar, Mulhouse..." name="location" oninput="this.className = ''"></p>
-  </div>
-
-  <!-- Étape 4 : Envies gastronomiques et message -->
-  <div class="tab">
-    <h3>4. Vos envies & Précisions</h3>
-    <label for="message"><strong>Détails de votre demande :</strong></label>
-    <p>
-      <textarea id="message" name="message" rows="5" placeholder="Précisez les produits souhaités (sandre, brochet, perche, silure, poissons fumés, matelote...), une éventuelle animation musicale à l'accordéon, ou vos questions..."></textarea>
-    </p>
-  </div>
-
-  <!-- Boutons de navigation -->
-  <div style="overflow:auto; margin-top: 25px;">
-    <div style="float:right;">
-      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Précédent</button>
-      <button type="button" id="nextBtn" onclick="nextPrev(1)">Suivant</button>
-    </div>
-  </div>
-
-  <!-- 4 cercles correspondant aux 4 étapes -->
-  <div style="text-align:center; margin-top:35px;">
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-  </div>
-</form>
-
-<script>
-var currentTab = 0; // Étape initiale (0)
-showTab(currentTab); // Afficher la première étape
-
-function showTab(n) {
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
-
-  // Gestion de l'affichage du bouton Précédent
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
-
-  // Changement du texte du bouton Suivant à la dernière étape
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Envoyer la demande";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Suivant";
-  }
-
-  fixStepIndicator(n);
-}
-
-function nextPrev(n) {
-  var x = document.getElementsByClassName("tab");
-  // Bloquer le passage à l'étape suivante si un champ obligatoire est vide
-  if (n == 1 && !validateForm()) return false;
-
-  // Masquer l'étape actuelle
-  x[currentTab].style.display = "none";
-  currentTab = currentTab + n;
-
-  // Si on atteint la fin du formulaire, soumettre
-  if (currentTab >= x.length) {
-    document.getElementById("regForm").submit();
-    return false;
-  }
-
-  showTab(currentTab);
-}
-
-function validateForm() {
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].querySelectorAll("input, select");
-
-  for (i = 0; i < y.length; i++) {
-    // On ignore les cases à cocher (optionnelles) et le nombre d'enfants (peut être 0)
-    if (y[i].type === "checkbox" || y[i].name === "guests_children") {
-      continue;
-    }
-    if (y[i].value.trim() == "") {
-      y[i].className += " invalid";
-      valid = false;
-    }
-  }
-
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid;
-}
-
-function fixStepIndicator(n) {
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
-  }
-  x[n].className += " active";
-}
-</script>
-
-<footer class="center">
-  <h6>© 2026–2027 — Michael Lienhart | <a href="https://lienhartm.github.io/lm/">WebSite LM</a></h6>
-</footer>
-
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de devis - Délices de nos Rivières</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f1f1f1;
+        font-family: 'Raleway', sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      #regForm {
+        background-color: #ffffff;
+        margin: 50px auto;
+        padding: 40px;
+        width: 70%;
+        max-width: 700px;
+        min-width: 300px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #1b4965;
+      }
+      h3 {
+        color: #1b4965;
+        border-bottom: 2px solid #f1f1f1;
+        padding-bottom: 8px;
+      }
+      input, select, textarea {
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
+        font-family: 'Raleway', sans-serif;
+        border: 1px solid #aaaaaa;
+        border-radius: 4px;
+      }
+      /* Cases à cocher en taille normale */
+      input[type="checkbox"] {
+        width: auto;
+        margin-right: 8px;
+        transform: scale(1.1);
+      }
+      /* Marquage des champs invalides */
+      input.invalid, select.invalid {
+        background-color: #ffdddd;
+        border-color: #e63946;
+      }
+      /* Masquer toutes les étapes par défaut */
+      .tab {
+        display: none;
+      }
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 18px;
+        background: #f9f9f9;
+        padding: 12px;
+        border-radius: 4px;
+      }
+      .checkbox-grid label {
+        font-weight: normal;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+      button {
+        background-color: #1b4965;
+        color: #ffffff;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-family: 'Raleway', sans-serif;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        opacity: 0.85;
+      }
+      #prevBtn {
+        background-color: #bbbbbb;
+        margin-right: 8px;
+      }
+      /* Indicateurs d'étapes (cercles) */
+      .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 4px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+      }
+      .step.active {
+        opacity: 1;
+        background-color: #1b4965;
+      }
+      .step.finish {
+        background-color: #04AA6D;
+      }
+      h6 > a {
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="regForm" action="" method="post">
+      <h1>Demande de devis & Contact</h1>
+      <!-- Étape 1 : Coordonnées du client -->
+      <div class="tab">
+        <h3>1. Vos coordonnées</h3>
+        <p>
+          <select name="client_type" oninput="this.className = ''">
+            <option value="Particulier">Vous êtes : Un Particulier</option>
+            <option value="Professionnel">Vous êtes : Un Professionnel (Restaurateur, Comité, Entreprise)</option>
+          </select>
+        </p>
+        <p><input placeholder="Prénom..." oninput="this.className = ''" name="fname" required></p>
+        <p><input placeholder="Nom (ou Nom de l'établissement)..." oninput="this.className = ''" name="lname" required></p>
+        <p><input type="email" placeholder="Adresse e-mail..." oninput="this.className = ''" name="email" required></p>
+        <p><input type="tel" placeholder="Téléphone..." oninput="this.className = ''" name="phone" required></p>
+      </div>
+      <!-- Étape 2 : Événement, lieu et logistique -->
+      <div class="tab">
+        <h3>2. Votre événement & Logistique</h3>
+        <label for="event_type"><strong>Type d'événement :</strong></label>
+        <p>
+          <select id="event_type" name="event_type" oninput="this.className = ''">
+            <option value="">-- Choisissez le type d'événement --</option>
+            <option value="Commande ordinaire / Repas de famille">Commande ordinaire / Repas de famille</option>
+            <option value="Mariage">Mariage</option>
+            <option value="Anniversaire / Baptême / Communion">Anniversaire / Baptême / Communion</option>
+            <option value="Fête de village / Repas associatif">Fête de village / Repas associatif</option>
+            <option value="Événement d'entreprise / Séminaire">Événement d'entreprise / Séminaire</option>
+            <option value="Approvisionnement Restaurant / Épicerie">Approvisionnement Restaurant / Épicerie fine</option>
+            <option value="Autre">Autre événement</option>
+          </select>
+        </p>
+        <label for="setting_type"><strong>Configuration du lieu :</strong></label>
+        <p>
+          <select id="setting_type" name="setting_type" oninput="this.className = ''">
+            <option value="Intérieur">En intérieur (salle, domicile, restaurant...)</option>
+            <option value="Extérieur">En extérieur (jardin, plein air, chapiteau...)</option>
+            <option value="Intérieur et Extérieur">Mixte (Intérieur et Extérieur)</option>
+          </select>
+        </p>
+        <p><strong>Besoin en mobilier (optionnel) :</strong></p>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="materiel[]" value="Tentes / Tonnelles"> Tentes / Tonnelles</label>
+          <label><input type="checkbox" name="materiel[]" value="Tables"> Tables</label>
+          <label><input type="checkbox" name="materiel[]" value="Bancs"> Bancs</label>
+          <label><input type="checkbox" name="materiel[]" value="Chaises"> Chaises</label>
+        </div>
+        <p><strong>Besoin en consommables de table (optionnel) :</strong></p>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="consommables[]" value="Nappes (papier)"> Nappes (papier)</label>
+          <label><input type="checkbox" name="consommables[]" value="Couverts (plastique)"> Couverts (plastique)</label>
+          <label><input type="checkbox" name="consommables[]" value="Assiettes (carton)"> Assiettes (carton)</label>
+          <label><input type="checkbox" name="consommables[]" value="Verres (plastique)"> Verres (plastique)</label>
+        </div>
+      </div>
+      <!-- Étape 3 : Date et volume -->
+      <div class="tab">
+        <h3>3. Date & Convives</h3>
+        <label for="event_date"><strong>Date prévue de l'événement :</strong></label>
+        <p><input type="date" id="event_date" name="event_date" oninput="this.className = ''"></p>
+        <label for="guests_adults"><strong>Nombre de convives adultes estimé :</strong></label>
+        <p><input type="number" id="guests_adults" name="guests_adults" min="1" placeholder="Ex : 30 adultes" oninput="this.className = ''"></p>
+        <label for="guests_children"><strong>Nombre de convives enfants estimé :</strong></label>
+        <p><input type="number" id="guests_children" name="guests_children" min="0" value="0" placeholder="Ex : 5 enfants (0 si aucun)" oninput="this.className = ''"></p>
+        <label for="location"><strong>Lieu / Commune de l'événement :</strong></label>
+        <p><input id="location" placeholder="Ex : Guebwiller, Colmar, Mulhouse..." name="location" oninput="this.className = ''"></p>
+      </div>
+      <!-- Étape 4 : Envies gastronomiques et message -->
+      <div class="tab">
+        <h3>4. Vos envies & Précisions</h3>
+        <label for="message"><strong>Détails de votre demande :</strong></label>
+        <p>
+          <textarea id="message" name="message" rows="5" placeholder="Précisez les produits souhaités (sandre, brochet, perche, silure, poissons fumés, matelote...), une éventuelle animation musicale à l'accordéon, ou vos questions..."></textarea>
+        </p>
+      </div>
+      <!-- Boutons de navigation -->
+      <div style="overflow:auto; margin-top: 25px;">
+        <div style="float:right;">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Précédent</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Suivant</button>
+        </div>
+      </div>
+      <!-- 4 cercles correspondant aux 4 étapes -->
+      <div style="text-align:center; margin-top:35px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
+    <script>
+      var currentTab = 0; // Étape initiale (0)
+      showTab(currentTab); // Afficher la première étape
+      function showTab(n) {
+        var x = document.getElementsByClassName("tab");
+        x[n].style.display = "block";
+        // Gestion de l'affichage du bouton Précédent
+        if (n == 0) {
+          document.getElementById("prevBtn").style.display = "none";
+        } else {
+          document.getElementById("prevBtn").style.display = "inline";
+        }
+        // Changement du texte du bouton Suivant à la dernière étape
+        if (n == (x.length - 1)) {
+          document.getElementById("nextBtn").innerHTML = "Envoyer la demande";
+        } else {
+          document.getElementById("nextBtn").innerHTML = "Suivant";
+        }
+        fixStepIndicator(n);
+      }
+      function nextPrev(n) {
+        var x = document.getElementsByClassName("tab");
+        // Bloquer le passage à l'étape suivante si un champ obligatoire est vide
+        if (n == 1 && !validateForm()) return false;
+        // Masquer l'étape actuelle
+        x[currentTab].style.display = "none";
+        currentTab = currentTab + n;
+        // Si on atteint la fin du formulaire, soumettre
+        if (currentTab >= x.length) {
+          document.getElementById("regForm").submit();
+          return false;
+        }
+        showTab(currentTab);
+      }
+      function validateForm() {
+        var x, y, i, valid = true;
+        x = document.getElementsByClassName("tab");
+        y = x[currentTab].querySelectorAll("input, select");
+        for (i = 0; i < y.length; i++) {
+          // On ignore les cases à cocher (optionnelles) et le nombre d'enfants (peut être 0)
+          if (y[i].type === "checkbox" || y[i].name === "guests_children") {
+            continue;
+          }
+          if (y[i].value.trim() == "") {
+            y[i].className += " invalid";
+            valid = false;
+          }
+        }
+        if (valid) {
+          document.getElementsByClassName("step")[currentTab].className += " finish";
+        }
+        return valid;
+      }
+      function fixStepIndicator(n) {
+        var i, x = document.getElementsByClassName("step");
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" active", "");
+        }
+        x[n].className += " active";
+      }
+    </script>
+    <footer class="center">
+      <h6>© 2026–2027 — Michael Lienhart | <a href="https://lienhartm.github.io/lm/">WebSite LM</a></h6>
+    </footer>
+  </body>
+</html>
