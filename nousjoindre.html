@@ -19,7 +19,6 @@
 
         const map = document.querySelector('gmp-map');
         const marker = document.querySelector('gmp-advanced-marker');
-        const placePicker = document.querySelector('gmpx-place-picker');
         const infowindow = new google.maps.InfoWindow();
 
         map.innerMap.setOptions({
@@ -133,46 +132,38 @@
 			<a href="nousjoindre.html">NOUS JOINDRE</a>
 		</nav>
 
-      <section class="localisation">
-
-          <h2>Où nous trouver ?</h2>
-
-          <div class="tables">
-
-              <h3>Délices de nos rivières</h3>
-
-              <p>
-                  Rue de la Mittelhardt,
-                  Balgau, France
-              </p>
-
-<!--              <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=47.9271614,7.537052"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Obtenir un itinéraire
-              </a>
-
-          </div>
-
-<!-- Chargement de l'API Google Maps -->
-<gmpx-api-loader
-    key="AIzaSyA2hpqN39nm0mmOxZVO4lNbQpj8-l6X2Bo">
-</gmpx-api-loader>
-
-<!-- Carte Google Maps -->
-<gmp-map
-    center="47.9271614,7.537052"
-    zoom="16"
-    map-id="DEMO_MAP_ID">
-
-    <gmp-advanced-marker
-        position="47.9271614,7.537052"
-        title="Délices de nos rivières">
-    </gmp-advanced-marker>
-
-</gmp-map>
-      </section>
+			<section class="localisation">
+			
+			    <h2>Où nous trouver ?</h2>
+			
+			    <div class="tables">
+			
+			        <h3>Délices de nos rivières</h3>
+			
+			        <p>
+			            Rue de la Mittelhardt,
+			            Balgau, France
+			        </p>
+			
+			    </div>
+			
+			    <gmpx-api-loader
+			        key="TA_NOUVELLE_CLE_API">
+			    </gmpx-api-loader>
+			
+			    <gmp-map
+			        center="47.9271614,7.537052"
+			        zoom="16"
+			        map-id="DEMO_MAP_ID">
+			
+			        <gmp-advanced-marker
+			            position="47.9271614,7.537052"
+			            title="Délices de nos rivières">
+			        </gmp-advanced-marker>
+			
+			    </gmp-map>
+			
+			</section>
 		      
 		<footer class="center">
 			<h6>LM LIENHART MICHAEL</h6>
