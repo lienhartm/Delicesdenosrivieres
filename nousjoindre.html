@@ -257,66 +257,40 @@
 			<a href="nousjoindre.html">NOUS JOINDRE</a>
 		</nav>
 
-			<section class="localisation">
-			
-			    <h2>Où nous trouver ?</h2>
-			
-			    <div class="tables">
-          <div class="address">
-            <div class="stitre">
-              <span class="geo">#</span>
-			        <p>DÉLICES DE NOS RIVIERES ALSACE,<br> Rue de la Mittelhardt,<br> Balgau, France</p>
-            </div>
-          <div class="itin">					
-					  <h4>Itinéraire</h4>
-
-<form action="https://www.google.com/maps/dir/" method="get" target="_blank">
-
-    <input
-        type="text"
-        name="api"
-        value="1"
-        hidden>
-
-    <input
-        type="text"
-        name="origin"
-        placeholder="Adresse de départ"
-        required>
-
-    <input
-        type="hidden"
-        name="destination"
-        value="DÉLICES DE NOS RIVIERES ALSACE, 1 Rue de la Mittelhardt, 68740 Balgau, France">
-
-    <input
-        type="submit"
-        value="Obtenir itinéraire">
-
-</form>
+		<section class="localisation">
+		
+			<h2>Où nous trouver ?</h2>
+		
+			<div class="tables">
+				<div class="address">
+					<div class="stitre">
+						<span class="geo">#</span>
+						<p>DÉLICES DE NOS RIVIERES ALSACE,<br> Rue de la Mittelhardt,<br> Balgau, France</p>
 					</div>
+		
+					<div class="itin">					
+						<h4>Itinéraire</h4>
+		
+						<form action="https://www.google.com/maps/dir/" method="get" target="_blank">
+							<input type="text" name="api" value="1" hidden>
+							<input type="text" name="origin" placeholder="Adresse de départ" required>
+							<input type="hidden" name="destination" value="DÉLICES DE NOS RIVIERES ALSACE, 1 Rue de la Mittelhardt, 68740 Balgau, France">
+							<input type="submit" value="Obtenir itinéraire">
+						</form>
 					</div>
-				    <div class="carte">
-
-			        <gmpx-api-loader
-			            key="AIzaSyA2hpqN39nm0mmOxZVO4lNbQpj8-l6X2Bo">
-			        </gmpx-api-loader>
-
-					<gmp-advanced-marker position="47.9271614,7.537052"></gmp-advanced-marker>
-			    
-			        <gmp-map
-			            center="47.9271614,7.537052"
-			            zoom="12"
-			            map-id="DEMO_MAP_ID">
-															    
-						<gmp-advanced-marker position="47.9271614,7.537052">
-
-						</gmp-advanced-marker>
-					    
-			        </gmp-map>
-				    </div>			
-				  </div>
-			</section>
+				</div>
+				
+				<div class="carte">
+					
+					<gmpx-api-loader key="AIzaSyA2hpqN39nm0mmOxZVO4lNbQpj8-l6X2Bo"></gmpx-api-loader>
+							
+					<gmp-map center="47.9271614,7.537052" zoom="12" map-id="DEMO_MAP_ID">
+						<gmp-advanced-marker position="47.9271614,7.537052"></gmp-advanced-marker>
+					</gmp-map>
+							
+				</div>
+			</div>
+		</section>
 		      
 		<footer class="center">
 			<h6>LM LIENHART MICHAEL</h6>
