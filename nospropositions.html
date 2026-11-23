@@ -3,37 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Délices de Nos Rivières</title>
+		
+		<link href="style.css" rel="stylesheet">
 		<style>
-			body {
-				text-align: center;
-			}
-			h1 {
-				color: #141E6E;
-				font-size: 80px;
-				border-bottom: 2px solid #141E6E;
-   		  margin: 0px;
-			}
-      h1::before {
-        content: "";
-        display: inline-block;
-        width: 200px;
-        height: 150px;
-        background-image: url("media/img-001.jpg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        vertical-align: central;
-      }
-			nav	{
-				background-color: #141E6E;
-				padding: 20px;
-			}
-			a {
-				margin: 0 100px 0 100px;
-				text-decoration: none;
-				font-weight: bold;
-				color: white;
-			}
 			p {
 				padding-top: 50px;
 				font-weight: bold;
@@ -45,7 +17,17 @@
 				border-radius: 10px;
 				background-color: orange;
 				color: white;
-				top: 100px;
+        top: 75px;
+			}
+			.propos {
+			text-align: left;
+			font-weight: 100;
+			  margin: 50px 250px 50px 250px;
+			}
+			.propos >	p {
+			font-weight: 100;
+			letter-spacing: 0.25px;
+      line-height: 28px;
 			}
 			figure {
 				border: 2px solid #146E1E;
@@ -68,14 +50,6 @@
 				width: 200px;
 				margin: 0 auto 0 auto;
 			}
-			footer {
-				background-color: rgba(20,30,110,0.5);
-				margin-top: 100px;
-				padding: 50px;
-			}
-			h6 > a {
-				margin: 0px;
-			}
 		</style>
 	</head>
 	<body>
@@ -89,18 +63,21 @@
 			<a href="nousjoindre.html">NOUS JOINDRE</a>
 		</nav>
 		<section>
-			<p>Délices de nos rivières collecte et transforme maintenant depuis 1988 le poisson sauvage pêché sur le grand canal d'Alsace et le Rhin.</p>
+		<div class="propos">
+			<p>Depuis 1988, Délices de nos rivières perpétue un savoir-faire artisanal dans la collecte et la transformation du poisson sauvage.</p>
+      <p>Pêchés dans les eaux du Grand Canal d'Alsace et du Rhin, nos poissons sont soigneusement sélectionnés et transformés dans le respect des traditions et de la richesse de notre patrimoine fluvial alsacien.</p>
+      </div>
 			<a class="soumission" href="form.html">Par ici ! </a>
 			<div class="proposition">
 				<a href="nospropositions.html">
 					<figure class="article">
-						<img class="article" src="media/img-001.jpg">
+						<img class="article" src="media/img-00.jpg">
 						<figcaption class="article">L'étal du Pêcheur</figcaption>
 					</figure>
 				</a>
 				<a href="nospropositions.html">
 					<figure class="article">
-						<img class="article" src="media/img-001.jpg">
+						<img class="article" src="media/img-00.jpg">
 						<figcaption class="article">Le traiteur</figcaption>
 					</figure>
 				</a>

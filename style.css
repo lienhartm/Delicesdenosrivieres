@@ -1,0 +1,78 @@
+      /* PAGE WEB */
+			body {
+				text-align: center;
+			}
+			h1 {
+				color: #141E6E;
+				font-size: 80px;
+				border-bottom: 2px solid #141E6E;
+   		  margin: 0px;
+			}
+      h1::before {
+        content: "";
+        display: inline-block;
+        width: 200px;
+        height: 150px;
+        background-image: url("media/img-00.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: central;
+      }
+			nav	{
+				background-color: #042550;
+				padding: 20px;
+			}
+			a {
+				margin: 0 100px 0 100px;
+				text-decoration: none;
+				font-weight: bold;
+				color: white;
+			}
+			section	{
+			  margin: 50px;
+				display: contents;
+				width: auto;
+				height: auto;
+			}
+			h2 {
+				width: 500px;
+  margin: 50px auto 50px auto;
+				text-align: center;
+				border-bottom: 2px solid #146E1E;
+				color: #141E6E;
+				margin-bottom: 50px;
+			}
+			
+			footer {
+				background-color: rgba(20,30,110,0.5);
+				margin-top: 100px;
+				padding: 50px;
+			}
+			footer {
+				background-color: rgba(20,30,110,0.5);
+				margin-top: 100px;
+				padding: 50px;
+			}
+			h6 > a {
+				margin: 0px;
+			}
+			
+			@media screen and (max-width: 768px) {
+			.tables {
+				flex-direction: column;
+				align-items: center;
+			}
+			.address {
+				width: 100%;
+				max-width: 400px;
+				flex-basis: auto;
+			}
+			.carte {
+				width: 100%;
+			}
+			h2 {
+				width: 100%;
+			}
+		}
+
