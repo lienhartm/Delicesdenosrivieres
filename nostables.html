@@ -10,16 +10,21 @@
 			}
 			h1 {
 				color: #141E6E;
-				font-size: 60px;
+				font-size: 80px;
 				border-bottom: 2px solid #141E6E;
+   		  margin: 0px;
 			}
-			h1:before {
-				content: url("media/l0g0-1.png");
-				position: relative;
-				right: 25px;
-				top: 25px;
-				border-bottom: 2px solid #141E6E;
-			}
+      h1::before {
+        content: "";
+        display: inline-block;
+        width: 200px;
+        height: 150px;
+        background-image: url("media/img-001.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: central;
+      }
 			nav	{
 				background-color: #141E6E;
 				padding: 20px;
@@ -88,13 +93,48 @@
 			h6 > a {
 				margin: 0px;
 			}
+			.img-001 {
+			background-color: #fff;";
+			}
+			.img-004 {
+        background-color: #1f262a;
+        height: 125px;
+        width: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .img-005 {
+  padding-top: 55.725px;
+  padding-bottom: 55.725px;
+      height: auto !important;
+      background-color: #fff;
+      width: 125px;
+      }
+      .img-006 {
+      padding-top: 36.65px;
+      padding-bottom: 36.65px;
+      height: auto !important;
+      background-color: #35302d;
+            width: 125px;
+      }
+      .img-007 {
+      background-color: #5b4942;
+      padding-left: 8px;
+      padding-right: 8px;
+      height: 125px;
+      }
+      .img-008 {
+      padding-top: 48.935px;
+      padding-bottom: 48.935px;
+      height: auto !important;
+      background-color:#fff;
+      width: 125px;
+      }
 		</style>
 	</head>
 	<body>
 		<a href="https://lienhartm.github.io/Delicesdenosrivieres/">
-			<header>
 				<h1>Délices de Nos Rivières</h1>
-			</header>
 		</a>
 		<nav>
 			<a href="nospropositions.html">NOS PROPOSITIONS</a>
@@ -105,54 +145,54 @@
 		<section>
 			<h2>Proposé aux meilleures tables d'Alsace</h2>
 			<div class="tables">
-				<a href="https://lienhartm.github.io/Delicesdenosrivieres/">
+				<a href="https://lienhartm.github.io/Delicesdenosrivieres/" target="_blank">
 					<figure>
-						<img class="table" src="media/maison.jpg">
+						<img class="table img-001" src="media/img-001-bis.png">
 						<figcaption>
 							<p>Les délices de nos rivières</p>
 							<address>1 rue Mittelhart,<br> 68740 Balgau, Alsace</address>
 						</figcaption>
 					</figure>
 				</a>
-				<a href="https://www.cerf-riquewihr.fr/">
+				<a href="https://www.cerf-riquewihr.fr/" target="_blank">
 					<figure>
-						<img class="table" src="media/lecerf.jpg">
+						<img class="table img-004" src="media/img-004.png">
 						<figcaption>
 							<p>Restaurant Au Cerf</p>
 							<address>5 - 7 Rue du Général de Gaulle<br>68340 Riquewihr, Alsace</address>
 						</figcaption>
 					</figure>
 				</a>
-				<a href="https://www.auberge-de-l-ill.com/fr/">
+				<a href="https://www.auberge-de-l-ill.com/fr/" target="_blank">
 					<figure>
-						<img class="table" src="media/delill.jpg">
+						<img class="table img-005" src="media/img-005.png">
 						<figcaption>
 							<p>Auberge de l'Ill</p>
 							<address>2, rue de Collonges au Mont d'Or<br>68970 Illhausern, Alsace</address>
 						</figcaption>
 					</figure>
 				</a>
-				<a href="https://le-rosenmeer.fr/">
+				<a href="https://le-rosenmeer.fr/" target="_blank">
 					<figure>
-						<img class="table" src="media/lerosenmer.jpg">
+						<img class="table img-006" src="media/img-006.png">
 						<figcaption>
 							<p>Restaurant Le Rosenmer</p>
 							<address>45 avenue de la gare<br>67560 Rosheim, Alsace</address>
 						</figcaption>
 					</figure>
 				</a>
-				<a href="https://www.auberge-saintlaurent.fr/fr/">
+				<a href="https://www.auberge-saintlaurent.fr/fr/" target="_blank">
 					<figure>
-						<img class="table" src="media/saintlaurent.jpg">
+						<img class="table img-007" src="media/img-007.png">
 						<figcaption>
 							<p>Auberge St Laurent</p>
 							<address>1 Rue de la Fontaine<br>68510 Sierentz, Alsace</address>
 						</figcaption>
 					</figure>
 				</a>
-				<a href="https://www.rdv-des-copains.fr/">
+				<a href="https://www.rdv-des-copains.fr/" target="_blank">
 					<figure>
-						<img class="table" src="media/lerdv.jpeg">
+						<img class="table img-008" src="media/img-008.png">
 						<figcaption>
 							<p>Restaurant Le Rendez vous des copains</p>
 							<address>5 Grand Rue,<br>68280 Logelheim, Alsace</address>

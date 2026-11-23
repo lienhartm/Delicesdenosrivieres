@@ -70,16 +70,21 @@
 			}
 			h1 {
 				color: #141E6E;
-				font-size: 60px;
+				font-size: 80px;
 				border-bottom: 2px solid #141E6E;
+   		  margin: 0px;
 			}
-			h1:before {
-				content: url("media/l0g0-1.png");
-				position: relative;
-				right: 25px;
-				top: 25px;
-				border-bottom: 2px solid #141E6E;
-			}
+      h1::before {
+        content: "";
+        display: inline-block;
+        width: 200px;
+        height: 150px;
+        background-image: url("media/img-001.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: central;
+      }
 			nav	{
 				background-color: #141E6E;
 				padding: 20px;
@@ -192,9 +197,7 @@
 	</head>
 	<body>
 		<a href="https://lienhartm.github.io/Delicesdenosrivieres/">
-			<header>
 				<h1>Délices de Nos Rivières</h1>
-			</header>
 		</a>
 		<nav>
 			<a href="nospropositions.html">NOS PROPOSITIONS</a>
